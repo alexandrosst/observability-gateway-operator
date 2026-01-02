@@ -9,9 +9,12 @@ images:
   newName: alexandrosst/observability-gateway-operator
   newTag: v0.1.0  # Change to whatever tag you pushed (or 'latest' for testing)
 
-commonLabels:
-  app.kubernetes.io/name: observability-gateway-operator
-  app.kubernetes.io/instance: observability-gateway-operator
-  app.kubernetes.io/part-of: observability-gateway-operator
-  app.kubernetes.io/managed-by: kustomize
-  app.kubernetes.io/created-by: controller-manager
+labels:
+- pairs:
+    app.kubernetes.io/name: observability-gateway-operator
+    app.kubernetes.io/instance: observability-gateway-operator
+    app.kubernetes.io/part-of: observability-gateway-operator
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/created-by: controller-manager
+  includeSelectors: true
+  includeTemplates: true
